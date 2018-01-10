@@ -1,15 +1,14 @@
 {
-  "name": "broadlinkjs-rm",
+  "name": "bfn-broadlinkjs-rm",
   "version": "0.2.0",
-  "description": "A Node.JS fork of broadlinkjs specifically intended for interacting with RM devices in homebridge-broadlink-rm",
+  "description": "A Node.JS fork of broadlinkjs-rm with manual add device function",
   "main": "index.js",
-  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lprhodes/broadlinkjs-rm.git"
+    "url": "git+https://github.com/BlueFidelity/broadlinkjs-rm.git"
   },
   "keywords": [
     "Broadlink",
@@ -17,12 +16,12 @@
     "remote",
     "control"
   ],
-  "author": "David Tao",
+  "author": "Blue Fidelity Inc. (https://www.bluefidelity.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lprhodes/broadlinkjs-rm/issues"
+    "url": "https://github.com/BlueFidelity/broadlinkjs-rm/issues"
   },
-  "homepage": "https://github.com/lprhodes/broadlinkjs-rm#readme",
+  "homepage": "https://github.com/BlueFidelity/broadlinkjs-rm#readme",
   "dependencies": {
     "@types/node": "^7.0.5"
   },

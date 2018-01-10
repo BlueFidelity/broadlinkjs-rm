@@ -54,6 +54,28 @@ Broadlink.prototype.genDevice = function (devtype, host, mac){
     }
 }
 
+Broadlink.prototype.addDevice = function(devtype, ip_address, mac_str){
+	  var mac = new Buffer(6);
+	  var values = mac_str.split(':');
+	  for (var i = 0; i < 6; ++i) {
+		 var tmpByte = parseInt(values[i], 16);
+		 mac.writeUInt8(tmpByte, i);
+	  }
+	  
+	  if(!this.devices){
+			this.devices = {};
+	  }
+	  
+	  if(!this.devices[mac]){
+			var dev = this.genDevice(devtype, {'port': 80, 'address': ip_address}, mac);
+			if (dev) {
+			  this.devices[mac] = dev;
+			  dev.on("deviceReady", () => { this.emit("deviceReady", dev); });
+			  dev.auth();
+			}
+	  }
+}
+
 Broadlink.prototype.discover = function(){
     self = this;
     var interfaces = os.networkInterfaces();
